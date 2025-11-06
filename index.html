@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claque Doigts - Stratégie Social Media</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fractal Variable', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/images/IMG1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .btn-connexion {
+            background-color: #528EF5;
+            color: #000;
+            font-weight: 500;
+            font-size: 12px;
+            padding: 8px 24px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none;
+        }
+
+        .btn-connexion:hover {
+            background-color: #4080e0;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            padding-bottom: 5rem;
+        }
+
+        .decorative-icon-mobile {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 2rem;
+        }
+
+        .decorative-icon-mobile img {
+            width: 100%;
+            height: auto;
+        }
+
+        .decorative-blob {
+            display: none;
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-50%, -5rem);
+            width: 80px;
+            height: 80px;
+            opacity: 0.9;
+        }
+
+        .decorative-blob img {
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .btn-commencer {
+            background-color: #CDF667;
+            color: #000;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: 2px solid #000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-commencer:hover {
+            background-color: #b8e055;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(0, 0, 0, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            header {
+                padding: 2rem 3rem;
+            }
+
+            .logo {
+                width: 256px;
+            }
+
+            .btn-connexion {
+                display: block;
+            }
+
+            .decorative-icon-mobile {
+                display: none;
+            }
+
+            .decorative-blob {
+                display: block;
+            }
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 3rem;
+            }
+
+            .btn-commencer {
+                font-size: 16px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    
+    <div class="content">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+            </div>
+            <button class="btn-connexion">Connexion</button>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="decorative-icon-mobile">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Sigle.svg" alt="">
+            </div>
+
+            <div class="decorative-blob">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Element.svg" alt="">
+            </div>
+
+            <h1>
+                Créer ta stratégie<br>
+                social media<br>
+                facilement !
+            </h1>
+
+            <button class="btn-commencer">Commencer</button>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Claque Doigts - Tous droits réservés</p>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <span>|</span>
+                <a href="#">Politique de confidentialité</a>
+                <span>|</span>
+                <a href="#">CGV</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
