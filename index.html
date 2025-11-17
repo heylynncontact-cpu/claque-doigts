@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claque Doigts - Stratégie Social Media</title>
     
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://use.typekit.net">
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    
     <!-- UI Kit CSS -->
     <link rel="stylesheet" href="css/ui-kit.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Force Fractul font -->
+    <style>
+        * {
+            font-family: 'Fractul', sans-serif !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -16,7 +27,7 @@
         <div class="logo">
             <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
         </div>
-        <button class="btn btn-small btn-bleu typo-bouton btn-connexion-header">
+        <button class="btn btn-small btn-bleu typo-bouton btn-connexion-header" onclick="openConnexionPopup()">
             Connexion
         </button>
     </header>
@@ -38,7 +49,7 @@
             facilement !
         </h1>
 
-        <button class="btn btn-big btn-vert btn-contour typo-bouton cta-button">
+        <button class="btn btn-big btn-vert typo-bouton cta-button" onclick="openCommencerPopup()">
             Commencer
         </button>
     </main>
@@ -52,5 +63,79 @@
             <a href="#">CGV</a>
         </div>
     </footer>
+
+    <!-- POP-UP COMMENCER -->
+    <div class="popup-overlay" id="popupCommencer">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup('popupCommencer')">×</button>
+            <div class="popup-content">
+                <h3 class="h3">Ce contenu est verrouillé sans rendez-vous</h3>
+                <p class="paragraphe">Une version gratuite est disponible mais incomplète</p>
+                <div class="popup-buttons">
+                    <button class="btn btn-big btn-vert typo-bouton">
+                        Prendre Rendez-vous
+                    </button>
+                    <button class="btn btn-small btn-vert typo-bouton">
+                        Version gratuite
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POP-UP CONNEXION -->
+    <div class="popup-overlay" id="popupConnexion">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup('popupConnexion')">×</button>
+            <div class="popup-content white">
+                <h3 class="h3">Connexion</h3>
+                <div class="input-field-wrapper">
+                    <label class="input-field-label">Mot de passe</label>
+                    <input type="password" class="input-field" placeholder="Entrez votre mot de passe">
+                </div>
+                <button class="btn btn-large btn-vert typo-bouton">
+                    Valider
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript pour les pop-ups -->
+    <script>
+        function openCommencerPopup() {
+            document.getElementById('popupCommencer').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openConnexionPopup() {
+            document.getElementById('popupConnexion').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer en cliquant sur l'overlay
+        document.querySelectorAll('.popup-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.popup-overlay').forEach(overlay => {
+                    overlay.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>
