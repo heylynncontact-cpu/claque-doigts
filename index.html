@@ -4,240 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claque Doigts - Stratégie Social Media</title>
-    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Fractal Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background-image: url('https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/images/IMG1.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem;
-        }
-
-        .logo {
-            width: 180px;
-            height: auto;
-        }
-
-        .btn-connexion {
-            background-color: #528EF5;
-            color: #000;
-            font-weight: 500;
-            font-size: 12px;
-            padding: 8px 24px;
-            border-radius: 5px;
-            border: 1px solid #000;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: none;
-        }
-
-        .btn-connexion:hover {
-            background-color: #4080e0;
-        }
-
-        /* Main Content */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1.5rem;
-            padding-bottom: 5rem;
-            text-align: center;
-        }
-
-        .decorative-icon-mobile {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 2rem;
-        }
-
-        .decorative-blob {
-            display: none;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            color: #000;
-        }
-
-        .btn-commencer {
-            background-color: #CDF667;
-            color: #000;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 12px 32px;
-            border-radius: 8px;
-            border: 2px solid #000;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-commencer:hover {
-            background-color: #b8e055;
-        }
-
-        /* Footer */
-        footer {
-            position: relative;
-            z-index: 1;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 11px;
-            color: rgba(0, 0, 0, 0.7);
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: rgba(0, 0, 0, 0.7);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Desktop styles */
-        @media (min-width: 768px) {
-            header {
-                padding: 2rem 3rem;
-            }
-
-            .logo {
-                width: 256px;
-            }
-
-            .btn-connexion {
-                display: block;
-            }
-
-            main {
-                align-items: flex-start;
-                padding-left: 5rem;
-                text-align: left;
-            }
-
-            .decorative-icon-mobile {
-                display: none;
-            }
-
-            .decorative-blob {
-                display: block;
-                position: absolute;
-                top: 25%;
-                left: 45%;
-                width: 60px;
-                height: 60px;
-            }
-
-            h1 {
-                font-size: 4.5rem;
-                margin-bottom: 3rem;
-                max-width: 800px;
-            }
-
-            .btn-commencer {
-                font-size: 16px;
-                padding: 14px 36px;
-            }
-
-            footer {
-                font-size: 13px;
-                padding: 2rem;
-            }
-        }
-    </style>
+    
+    <!-- UI Kit CSS -->
+    <link rel="stylesheet" href="css/ui-kit.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="background"></div>
-    
-    <div class="content">
-        <!-- Header -->
-        <header>
-            <svg class="logo" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="60" font-family="Fractal Variable, sans-serif" font-size="48" font-weight="600" fill="#000">Claque Doigts</text>
-            </svg>
-            <button class="btn-connexion">Connexion</button>
-        </header>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+        </div>
+        <button class="btn btn-small btn-contour btn-connexion-header typo-bouton">
+            Connexion
+        </button>
+    </header>
 
-        <!-- Main Content -->
-        <main>
-            <svg class="decorative-icon-mobile" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="50,15 65,40 90,40 70,55 80,85 50,65 20,85 30,55 10,40 35,40" fill="#8B5CF6"/>
-            </svg>
-
-            <svg class="decorative-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,39.8,77.4C25.8,85.8,8.8,90,-7.2,89.2C-23.2,88.4,-38.4,82.6,-51.8,74.1C-65.2,65.6,-76.8,54.4,-83.8,40.8C-90.8,27.2,-93.2,11.2,-91.6,-4.2C-90,-19.6,-84.4,-34.4,-75.8,-47.2C-67.2,-60,-55.6,-71,-41.8,-77.8C-28,-84.6,-12,-87.2,2.4,-91.2C16.8,-95.2,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" fill="#8B5CF6"/>
-            </svg>
-
-            <h1>
-                Créer ta stratégie<br>
-                social media<br>
-                facilement !
-            </h1>
-
-            <button class="btn-commencer">Commencer</button>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2025 Claque Doigts - Tous droits réservés</p>
-            <div class="footer-links">
-                <a href="#">Mentions légales</a>
-                <span>|</span>
-                <a href="#">Politique de confidentialité</a>
-                <span>|</span>
-                <a href="#">CGV</a>
-            </div>
-        </footer>
+    <!-- Hero Image Block -->
+    <div class="hero-image-block">
+        <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/images/IMG1.jpg" alt="Background gradient">
     </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="decorative-icon">
+            <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Element.svg" alt="">
+        </div>
+
+        <h1 class="h1 main-title">
+            Créer ta stratégie<br>
+            social media<br>
+            facilement !
+        </h1>
+
+        <button class="btn btn-big btn-vert btn-contour typo-bouton cta-button">
+            Commencer
+        </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mini">
+        <p>© 2025 Claque Doigts - Tous droits réservés</p>
+        <div class="footer-links">
+            <a href="#">Mentions légales</a> | 
+            <a href="#">Politique de confidentialité</a> | 
+            <a href="#">CGV</a>
+        </div>
+    </footer>
 </body>
 </html>
