@@ -36,10 +36,10 @@
 
 /* Desktop / Tablet */
 .h1 {
-  font-family: var(--font-family);
+  font-family: 'Fractal Variable', sans-serif;
   font-weight: 500;
   font-size: 64px;
-  line-height: auto;
+  line-height: 1.2;
   color: var(--color-noir);
 }
 
@@ -124,12 +124,12 @@
 .btn {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 12px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   text-decoration: none;
   border: none;
@@ -138,13 +138,15 @@
 
 /* Tailles */
 .btn-big {
-  padding: 4px 24px;
-  height: 29px;
+  padding: 0 40px;
+  height: 56px;
+  font-size: 14px;
 }
 
 .btn-small {
   padding: 3px 20px;
   height: 24px;
+  font-size: 12px;
 }
 
 /* Styles */
