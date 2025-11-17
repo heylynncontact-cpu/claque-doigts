@@ -22,10 +22,7 @@ body {
 
 /* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 100;
   background: #FFFFFF;
   display: flex;
@@ -68,7 +65,6 @@ body {
 .main-content {
   padding: 0 33px;
   text-align: center;
-  margin-top: 140px;
 }
 
 .decorative-icon {
@@ -94,10 +90,7 @@ body {
 
 /* Footer */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 60px;
   padding: 20px;
   text-align: center;
   background: #FFFFFF;
@@ -141,7 +134,6 @@ body {
   }
 
   .main-content {
-    margin-top: 465px;
     padding: 0 33px;
   }
 
@@ -156,6 +148,7 @@ body {
   }
 
   .footer {
+    margin-top: 80px;
     padding: 24px;
   }
 }
@@ -173,13 +166,14 @@ body {
     position: absolute;
     padding: 60px 79px 20px 85px;
     background: transparent;
+    width: 100%;
   }
 
   .hero-image-block {
     position: absolute;
     top: 0;
     right: 0;
-    width: 648px;
+    width: 50%;
     height: 100vh;
     border-radius: 56px 0 0 56px;
     margin: 0;
@@ -216,5 +210,6 @@ body {
     right: 0;
     background: transparent;
     padding: 32px;
+    margin: 0;
   }
 }
