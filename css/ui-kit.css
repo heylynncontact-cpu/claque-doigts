@@ -1,0 +1,394 @@
+/* ==========================================
+   CLAQUE DOIGTS - UI KIT
+   ========================================== */
+
+/* FONT IMPORT */
+@import url('https://use.typekit.net/wdg2wjk.css');
+
+/* ==========================================
+   VARIABLES CSS
+   ========================================== */
+:root {
+  /* Couleurs */
+  --color-vert: #CDF667;
+  --color-bleu: #528EF5;
+  --color-violet: #C99CFD;
+  --color-rose: #FDAFB3;
+  --color-blanc: #FFFFFF;
+  --color-gris: #D8D8D8;
+  --color-noir: #140F04;
+  
+  /* Typographie */
+  --font-family: 'Fractal Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Espacement (système 8px) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-xxl: 64px;
+}
+
+/* ==========================================
+   TYPOGRAPHIE
+   ========================================== */
+
+/* Desktop / Tablet */
+.h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.h2 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.h3 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.paragraphe {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.legende {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.typo-bouton {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: auto;
+}
+
+.menu {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+.mini {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 9px;
+  line-height: auto;
+  color: var(--color-noir);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 32px;
+  }
+  
+  .h2 {
+    font-size: 28px;
+  }
+  
+  .h3 {
+    font-size: 20px;
+  }
+  
+  .legende {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   BOUTONS
+   ========================================== */
+
+.btn {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border: none;
+  color: var(--color-noir);
+}
+
+/* Tailles */
+.btn-big {
+  padding: 4px 24px;
+  height: 29px;
+}
+
+.btn-small {
+  padding: 3px 20px;
+  height: 24px;
+}
+
+/* Styles */
+.btn-contour {
+  background: transparent;
+  border: 1px solid var(--color-noir);
+}
+
+.btn-plain {
+  background: transparent;
+  border: none;
+}
+
+/* Couleurs */
+.btn-vert {
+  background-color: var(--color-vert);
+  border-color: var(--color-noir);
+}
+
+.btn-vert.btn-contour {
+  background-color: var(--color-vert);
+}
+
+.btn-bleu {
+  background-color: var(--color-bleu);
+  border-color: var(--color-noir);
+}
+
+.btn-violet {
+  background-color: var(--color-violet);
+  border-color: var(--color-noir);
+}
+
+.btn-rose {
+  background-color: var(--color-rose);
+  border-color: var(--color-noir);
+}
+
+/* Hover */
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   LABEL INPUT (choix multiple)
+   ========================================== */
+
+.label-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 18px;
+  min-height: 44px;
+  border-radius: 8px;
+  background: var(--color-blanc);
+  border: 1px solid var(--color-gris);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-noir);
+}
+
+.label-input-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.label-input:hover {
+  border-color: var(--color-violet);
+}
+
+.label-input.active {
+  border-color: var(--color-vert);
+}
+
+/* ==========================================
+   INPUT FIELD (champ texte)
+   ========================================== */
+
+.input-field-wrapper {
+  position: relative;
+  width: 227px;
+}
+
+.input-field {
+  width: 100%;
+  height: 30px;
+  padding: 5px 8px 5px 40px;
+  border-radius: 5px;
+  background: var(--color-blanc);
+  border: 1px solid var(--color-noir);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-noir);
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: var(--color-gris);
+}
+
+.input-field:focus {
+  outline: none;
+  color: var(--color-noir);
+}
+
+.input-field.error {
+  border-color: var(--color-rose);
+}
+
+.input-field.success {
+  border-color: var(--color-vert);
+}
+
+.input-prefix {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-gris);
+}
+
+.input-field.error + .input-prefix {
+  background: var(--color-rose);
+}
+
+.input-field.success + .input-prefix {
+  background: var(--color-vert);
+}
+
+.input-support {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-gris);
+}
+
+.input-counter {
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-gris);
+}
+
+/* ==========================================
+   SLIDER (curseur)
+   ========================================== */
+
+.slider-wrapper {
+  position: relative;
+  width: 275px;
+  height: 9px;
+}
+
+.slider {
+  width: 100%;
+  height: 9px;
+  background: #F5F5F5;
+  border: 1px solid var(--color-gris);
+  border-radius: 24px;
+  outline: none;
+  -webkit-appearance: none;
+  position: relative;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: var(--color-blanc);
+  border: 1px solid var(--color-gris);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: var(--color-blanc);
+  border: 1px solid var(--color-gris);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-progress {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 5px;
+  border-radius: 16px;
+  background: var(--color-vert);
+  pointer-events: none;
+}
+
+/* ==========================================
+   UTILITAIRES
+   ========================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Couleurs de texte */
+.text-noir { color: var(--color-noir); }
+.text-blanc { color: var(--color-blanc); }
+.text-vert { color: var(--color-vert); }
+.text-bleu { color: var(--color-bleu); }
+.text-violet { color: var(--color-violet); }
+.text-rose { color: var(--color-rose); }
+.text-gris { color: var(--color-gris); }
+
+/* Couleurs de fond */
+.bg-blanc { background-color: var(--color-blanc); }
+.bg-gris { background-color: var(--color-gris); }
+.bg-noir { background-color: var(--color-noir); }
+.bg-vert { background-color: var(--color-vert); }
+.bg-bleu { background-color: var(--color-bleu); }
+.bg-violet { background-color: var(--color-violet); }
+.bg-rose { background-color: var(--color-rose); }
