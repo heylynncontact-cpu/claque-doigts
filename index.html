@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Fractal Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Fractal Variable', sans-serif;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
@@ -44,11 +44,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .logo {
-            width: 180px;
+            width: 200px;
+        }
+
+        .logo img {
+            width: 100%;
             height: auto;
         }
 
@@ -78,25 +82,41 @@
             justify-content: center;
             padding: 2rem 1.5rem;
             padding-bottom: 5rem;
-            text-align: center;
         }
 
         .decorative-icon-mobile {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             margin-bottom: 2rem;
+        }
+
+        .decorative-icon-mobile img {
+            width: 100%;
+            height: auto;
         }
 
         .decorative-blob {
             display: none;
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-50%, -5rem);
+            width: 80px;
+            height: 80px;
+            opacity: 0.9;
+        }
+
+        .decorative-blob img {
+            width: 100%;
+            height: auto;
         }
 
         h1 {
             font-size: 2rem;
             font-weight: 500;
+            text-align: center;
             margin-bottom: 2rem;
             line-height: 1.2;
-            color: #000;
         }
 
         .btn-commencer {
@@ -104,8 +124,8 @@
             color: #000;
             font-weight: 500;
             font-size: 14px;
-            padding: 12px 32px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            border-radius: 5px;
             border: 2px solid #000;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -121,7 +141,7 @@
             z-index: 1;
             padding: 1.5rem;
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             color: rgba(0, 0, 0, 0.7);
         }
 
@@ -132,7 +152,7 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 0.75rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -159,39 +179,25 @@
                 display: block;
             }
 
-            main {
-                align-items: flex-start;
-                padding-left: 5rem;
-                text-align: left;
-            }
-
             .decorative-icon-mobile {
                 display: none;
             }
 
             .decorative-blob {
                 display: block;
-                position: absolute;
-                top: 25%;
-                left: 45%;
-                width: 60px;
-                height: 60px;
             }
 
             h1 {
-                font-size: 4.5rem;
+                font-size: 4rem;
                 margin-bottom: 3rem;
-                max-width: 800px;
             }
 
             .btn-commencer {
                 font-size: 16px;
-                padding: 14px 36px;
             }
 
             footer {
-                font-size: 13px;
-                padding: 2rem;
+                font-size: 14px;
             }
         }
     </style>
@@ -202,21 +208,21 @@
     <div class="content">
         <!-- Header -->
         <header>
-            <svg class="logo" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="60" font-family="Fractal Variable, sans-serif" font-size="48" font-weight="600" fill="#000">Claque Doigts</text>
-            </svg>
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+            </div>
             <button class="btn-connexion">Connexion</button>
         </header>
 
         <!-- Main Content -->
         <main>
-            <svg class="decorative-icon-mobile" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="50,15 65,40 90,40 70,55 80,85 50,65 20,85 30,55 10,40 35,40" fill="#8B5CF6"/>
-            </svg>
+            <div class="decorative-icon-mobile">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Sigle.svg" alt="">
+            </div>
 
-            <svg class="decorative-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,90,-16.3,88.5,-0.9C87,14.6,81.4,29.2,73.1,42.8C64.8,56.4,53.8,69,39.8,77.4C25.8,85.8,8.8,90,-7.2,89.2C-23.2,88.4,-38.4,82.6,-51.8,74.1C-65.2,65.6,-76.8,54.4,-83.8,40.8C-90.8,27.2,-93.2,11.2,-91.6,-4.2C-90,-19.6,-84.4,-34.4,-75.8,-47.2C-67.2,-60,-55.6,-71,-41.8,-77.8C-28,-84.6,-12,-87.2,2.4,-91.2C16.8,-95.2,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" fill="#8B5CF6"/>
-            </svg>
+            <div class="decorative-blob">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Element.svg" alt="">
+            </div>
 
             <h1>
                 Créer ta stratégie<br>
