@@ -371,24 +371,144 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Home - Image en haut sur mobile */
     .split-layout {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
     }
     
     .split-layout-gradient {
-        min-height: 200px;
+        min-height: 300px !important;
+        order: -1;
+    }
+    
+    .split-layout-content {
+        padding: 32px 24px;
     }
     
     .home-title,
     .section-title {
-        font-size: 32px;
+        font-size: 28px;
     }
     
+    .home-description {
+        font-size: 16px;
+    }
+    
+    /* Pages intro - Image en haut, plus petite */
+    .intro-layout {
+        display: flex;
+        flex-direction: column !important;
+        gap: 24px;
+    }
+    
+    .intro-layout-content {
+        order: 2;
+        padding: 0 24px;
+    }
+    
+    .intro-layout-image {
+        order: 1;
+        max-width: 100% !important;
+        height: 200px !important;
+        margin: 0 !important;
+    }
+    
+    .intro-layout-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Grilles de choix - Une colonne */
+    .choice-grid-3,
+    .choice-grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+    
+    .choice-card {
+        min-height: auto;
+        padding: 16px;
+    }
+    
+    /* Clients grid */
     .clients-grid {
         grid-template-columns: 1fr;
     }
     
+    /* Étapes parcours */
     .etape-card {
-        min-width: 300px;
+        min-width: 280px;
+    }
+    
+    /* Page récap - Boutons plus petits */
+    .recap-actions {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .recap-actions .btn {
+        width: 100%;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    .recap-actions .btn-big {
+        padding: 16px 24px !important;
+    }
+    
+    /* Formulaires */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Popups */
+    .popup {
+        margin: 20px;
+        max-width: calc(100vw - 40px);
+    }
+    
+    .popup-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .popup-actions .btn {
+        width: 100%;
+    }
+    
+    /* Header */
+    .header-content {
+        padding: 12px 16px;
+    }
+    
+    .header-logo img {
+        height: 28px;
+    }
+    
+    /* Progress bar */
+    .progress-bar-container {
+        padding: 12px 16px;
+        overflow-x: auto;
+        gap: 4px;
+    }
+    
+    .progress-step {
+        min-width: 60px;
+        font-size: 12px;
+    }
+    
+    /* Dashboard */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 16px;
+    }
+    
+    .dashboard-header .btn {
+        width: 100%;
     }
 }
+
