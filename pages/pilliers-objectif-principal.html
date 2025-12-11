@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilliers - Objectif Principal - Claque Doigts</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    <link rel="stylesheet" href="../css/ui-kit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Favicon.svg">
+</head>
+<body>
+    <header class="header header-purple">
+        <div class="header-content">
+            <a class="header-logo">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+            </a>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-step completed clickable">
+                <div class="progress-step-label">
+                    <div class="progress-step-icon"></div>
+                    <span>Cibles</span>
+                </div>
+                <div class="progress-step-bar">
+                    <div class="progress-step-bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="progress-step completed clickable">
+                <div class="progress-step-label">
+                    <div class="progress-step-icon"></div>
+                    <span>Plateforme</span>
+                </div>
+                <div class="progress-step-bar">
+                    <div class="progress-step-bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="progress-step current">
+                <div class="progress-step-label">
+                    <div class="progress-step-icon"></div>
+                    <span>Pilliers</span>
+                </div>
+                <div class="progress-step-bar">
+                    <div class="progress-step-bar-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="progress-step">
+                <div class="progress-step-label">
+                    <div class="progress-step-icon"></div>
+                    <span>Parcours</span>
+                </div>
+                <div class="progress-step-bar">
+                    <div class="progress-step-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="page-container">
+        <div class="full-layout">
+            <button onclick="window.location.href='./pilliers-intro.html'" style="border: none; background: none; cursor: pointer; display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-size: 16px;"><img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/keyboard_arrow.svg" alt="" style="width: 24px; height: 24px; transform: rotate(180deg);">Retour</button>
+            <div class="section-content">
+                <div class="section-question">
+                    <h2>Quel est votre objectif principal ?</h2>
+                    <div class="cards-grid cards-grid-3">
+                        <div class="choice-card" data-value="construire" style="background: white; border: 2px solid #D8D8D8;">
+                            <div style="background: #97BCF7; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+                                <div class="choice-card-header" style="align-items: flex-start; margin-bottom: 0;">
+                                    <div style="background: white; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📦</div>
+                                    <h3 class="choice-card-title" style="font-size: 22px; line-height: 1.2; color: black;">Construire<br><small style="font-size: 14px; font-weight: 400; opacity: 0.7;">Crédibilité</small></h3>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; padding: 0 16px;">Développer une communauté forte et fidèle sur les réseaux sociaux</p>
+                        </div>
+                        
+                        <div class="choice-card" data-value="vendre" style="background: white; border: 2px solid #D8D8D8;">
+                            <div style="background: #97BCF7; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+                                <div class="choice-card-header" style="align-items: flex-start; margin-bottom: 0;">
+                                    <div style="background: white; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">💰</div>
+                                    <h3 class="choice-card-title" style="font-size: 22px; line-height: 1.2; color: black;">Vendre<br><small style="font-size: 14px; font-weight: 400; opacity: 0.7;">Conversion</small></h3>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; padding: 0 16px;">Transformer des vues sur les réseaux sociaux en véritables clients</p>
+                        </div>
+                        
+                        <div class="choice-card" data-value="developper" style="background: white; border: 2px solid #D8D8D8;">
+                            <div style="background: #97BCF7; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+                                <div class="choice-card-header" style="align-items: flex-start; margin-bottom: 0;">
+                                    <div style="background: white; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📈</div>
+                                    <h3 class="choice-card-title" style="font-size: 22px; line-height: 1.2; color: black;">Développer<br><small style="font-size: 14px; font-weight: 400; opacity: 0.7;">Visibilité</small></h3>
+                                </div>
+                            </div>
+                            <p style="font-size: 13px; padding: 0 16px;">Attirer des personnes sur les réseaux sociaux pour être plus visible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="btn btn-green btn-big btn-validate" id="btn-validate">Valider</button>
+    
+        <footer class="footer" style="padding: 12px 0; margin-top: 0; border-top: 1px solid #D8D8D8;">
+        <div class="footer-content" style="font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <span>© 2025 Claque Doigts - Tous droits réservés</span>
+            <span>|</span>
+            <a href="./mentions-legales.html" style="color: #1A1A1A; text-decoration: none;">Mentions légales</a>
+            <span>|</span>
+            <a href="./politique-confidentialite.html" style="color: #1A1A1A; text-decoration: none;">Politique de confidentialité</a>
+            <span>|</span>
+            <a href="./cgu.html" style="color: #1A1A1A; text-decoration: none;">CGU</a>
+        </div>
+    </footer>
+    
+        <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        let selectedObjective = null;
+        document.querySelectorAll(".choice-card").forEach(function(card) {
+            card.addEventListener("click", function() {
+                document.querySelectorAll(".choice-card").forEach(c => c.classList.remove("selected"));
+                this.classList.add("selected");
+                selectedObjective = this.getAttribute("data-value");
+            });
+        });
+        
+        document.getElementById("btn-validate").addEventListener("click", function() {
+            if (!selectedObjective) {
+                alert("Veuillez sélectionner un objectif");
+                return;
+            }
+            const clientId = localStorage.getItem("current_client_id");
+            if (clientId) {
+                let strategy = JSON.parse(localStorage.getItem("strategy_" + clientId) || "{}");
+                strategy.mainObjective = selectedObjective;
+                localStorage.setItem("strategy_" + clientId, JSON.stringify(strategy));
+            }
+            window.location.href = "./pilliers-objectif-secondaire.html";
+        });
+    </script>
+</body>
+</html>
