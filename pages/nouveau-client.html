@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau client - Claque Doigts</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    <link rel="stylesheet" href="../css/ui-kit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Favicon.svg">
+</head>
+<body>
+    <header class="header header-blue">
+        <div class="header-content">
+            <a class="header-logo">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+            </a>
+        </div>
+    </header>
+    
+    <div class="page-container">
+        <div class="full-layout">
+            <button onclick="window.location.href='./clients.html'" style="border: none; background: none; cursor: pointer; display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-size: 16px;">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/keyboard_arrow.svg" alt="" style="width: 24px; height: 24px; transform: rotate(180deg);">
+                Retour
+            </button>
+            
+            <h1 style="font-size: 36px; margin-bottom: 32px;" id="page-title">Nouveau client</h1>
+            
+            <form id="client-form" style="max-width: 600px;">
+                <div class="form-group">
+                    <label class="form-label" for="prenom">Prénom <span style="color: #FF4D4D;">*</span></label>
+                    <input type="text" class="input-field" id="prenom" placeholder="Jean" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="nom">Nom <span style="color: #FF4D4D;">*</span></label>
+                    <input type="text" class="input-field" id="nom" placeholder="Dupont" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="entreprise">Entreprise</label>
+                    <input type="text" class="input-field" id="entreprise" placeholder="Mon Entreprise">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" class="input-field" id="email" placeholder="contact@entreprise.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="telephone">Téléphone</label>
+                    <input type="tel" class="input-field" id="telephone" placeholder="06 12 34 56 78">
+                </div>
+                
+                <button type="submit" class="btn btn-green btn-large">Créer le client</button>
+            </form>
+        </div>
+    </div>
+    
+        <footer class="footer" style="padding: 12px 0; margin-top: 0; border-top: 1px solid #D8D8D8;">
+        <div class="footer-content" style="font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <span>© 2025 Claque Doigts - Tous droits réservés</span>
+            <span>|</span>
+            <a href="./mentions-legales.html" style="color: #1A1A1A; text-decoration: none;">Mentions légales</a>
+            <span>|</span>
+            <a href="./politique-confidentialite.html" style="color: #1A1A1A; text-decoration: none;">Politique de confidentialité</a>
+            <span>|</span>
+            <a href="./cgu.html" style="color: #1A1A1A; text-decoration: none;">CGU</a>
+        </div>
+    </footer>
+    
+        <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get("edit");
+        
+        if (editId) {
+            document.getElementById("page-title").textContent = "Modifier le client";
+            document.querySelector("button[type=submit]").textContent = "Enregistrer";
+            
+            storage.get("clients", editId).then(client => {
+                if (client) {
+                    document.getElementById("nom").value = client.nom || "";
+                    document.getElementById("prenom").value = client.prenom || "";
+                    document.getElementById("entreprise").value = client.entreprise || "";
+                    document.getElementById("email").value = client.email || "";
+                    document.getElementById("telephone").value = client.telephone || "";
+                }
+            });
+        }
+        
+        document.getElementById("client-form").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            // Validation
+            const prenom = document.getElementById("prenom").value.trim();
+            const nom = document.getElementById("nom").value.trim();
+            
+            if (!prenom || !nom) {
+                alert("Le prénom et le nom sont obligatoires");
+                return;
+            }
+            
+            const clientData = {
+                id: editId || Date.now().toString(),
+                nom: nom,
+                prenom: prenom,
+                entreprise: document.getElementById("entreprise").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                telephone: document.getElementById("telephone").value.trim(),
+                createdAt: new Date().toISOString(),
+                completed: false
+            };
+            
+            if (editId) {
+                const existing = await storage.get("clients", editId);
+                if (existing) {
+                    clientData.createdAt = existing.createdAt;
+                    clientData.completed = existing.completed;
+                }
+            }
+            
+            await storage.save("clients", clientData.id, clientData);
+            localStorage.setItem("current_client_id", clientData.id);
+            
+            if (editId) {
+                alert("Client modifié avec succes !");
+                window.location.href = "./clients.html";
+            } else {
+                window.location.href = "./cibles-intro.html";
+            }
+        });
+    </script>
+</body>
+</html>
