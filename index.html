@@ -33,6 +33,20 @@
         <div class="split-layout-gradient" style="background: url('https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/images/IMG1.jpg') no-repeat center center; background-size: cover; min-height: calc(100vh - 80px);"></div>
     </div>
     
+    <div class="popup-overlay" id="popup-start">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h2 class="popup-title">Commencer</h2>
+            <div class="popup-content">
+                <p>Choisissez comment vous souhaitez utiliser Claque Doigts :</p>
+            </div>
+            <div class="popup-actions">
+                <button class="btn btn-green" id="btn-login" style="padding: 4px 24px; border-radius: 5px;">Connexion</button>
+                <button class="btn btn-white" onclick="document.getElementById('popup-start').style.display='none'; document.getElementById('popup-free-version').style.display='flex';" style="padding: 4px 24px; border-radius: 5px;">Version gratuite</button>
+            </div>
+        </div>
+    </div>
+    
     <div class="popup-overlay" id="popup-free-version">
         <div class="popup">
             <button class="popup-close" onclick="document.getElementById('popup-free-version').classList.remove('active')">&times;</button>
