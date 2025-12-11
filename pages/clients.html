@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes clients - Claque Doigts</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    <link rel="stylesheet" href="../css/ui-kit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Favicon.svg">
+</head>
+<body>
+    <header class="header header-blue">
+        <div class="header-content">
+            <a class="header-logo">
+                <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts">
+            </a>
+            <div class="header-actions">
+                <button class="btn btn-small btn-white" id="btn-logout">Deconnexion</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="page-container">
+        <div class="full-layout">
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Mes clients</h1>
+                <button class="btn btn-green btn-big" onclick="window.location.href='./nouveau-client.html'">Nouveau client</button>
+            </div>
+            
+            <div class="clients-grid" id="clients-grid">
+                <!-- Les clients seront charges ici -->
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>2025 Claque Doigts - Tous droits réservés</p>
+        </div>
+    </footer>
+    
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        async function loadClients() {
+            const clients = await storage.getAll("clients");
+            const grid = document.getElementById("clients-grid");
+            
+            // Filtrer les clients vides (sans entreprise)
+            const validClients = clients.filter(client => client.entreprise && client.entreprise.trim() !== "");
+            
+            if (validClients.length === 0) {
+                grid.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">Aucun client pour le moment</p>';
+                return;
+            }
+            
+            grid.innerHTML = "";
+            validClients.forEach(client => {
+                const card = document.createElement("div");
+                card.className = "client-card";
+                const nom = client.nom || "";
+                const prenom = client.prenom || "";
+                const entreprise = client.entreprise || "Sans nom";
+                const createdAt = client.createdAt ? new Date(client.createdAt).toLocaleDateString() : "Date inconnue";
+                
+                card.innerHTML = `
+                    <div class="client-card-header">
+                        <div class="client-card-name">${prenom} ${nom}</div>
+                        <div class="client-card-company">${entreprise}</div>
+                    </div>
+                    <div class="client-card-meta">
+                        <span>${createdAt}</span>
+                        <span class="badge badge-${client.completed ? 'green' : 'purple'}" style="font-size: 12px;">${client.completed ? 'Terminé' : 'En cours'}</span>
+                    </div>
+                    <div class="client-card-actions">
+                        <button class="btn btn-small btn-white" onclick="editClient('${client.id}')">Modifier</button>
+                        <button class="btn btn-small btn-green" onclick="openRecap('${client.id}')">Ouvrir</button>
+                        <button class="btn btn-small btn-white" onclick="deleteClient('${client.id}')">Supprimer</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        
+        function editClient(id) {
+            window.location.href = `/pages/nouveau-client.html?edit=${id}`;
+        }
+        
+        function openRecap(id) {
+            localStorage.setItem("current_client_id", id);
+            window.location.href = "./recap.html";
+        }
+        
+        async function deleteClient(id) {
+            if (confirm("Êtes-vous sur de vouloir supprimer ce client ?")) {
+                await storage.delete("clients", id);
+                loadClients();
+            }
+        }
+        
+        document.getElementById("btn-logout").addEventListener("click", logout);
+        loadClients();
+    </script>
+</body>
+</html>
