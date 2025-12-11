@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claque Doigts</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wdg2wjk.css">
+    <link rel="stylesheet" href="/css/ui-kit.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header style="background: white; padding: 16px 24px; border-bottom: 1px solid #D8D8D8;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Lettermark.svg" alt="Claque Doigts" style="height: 32px;">
+            <button class="btn btn-white btn-small" id="btn-login-header">Connexion</button>
+        </div>
+    </header>
+    
+    <div class="split-layout">
+        <div class="split-layout-content">
+            <div class="home-content">
+                <h1 class="home-title">
+                    <img src="https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/icons/Element.svg" alt="" style="width: 32px; height: 32px; margin-right: 16px;">
+                    Créer ta stratégie social media facilement !
+                </h1>
+                <p class="home-description">
+                    Définissez votre cible, choisissez vos plateformes, et créez une stratégie complète en quelques clics.
+                </p>
+                <button class="btn btn-green btn-big" id="btn-start">Commencer</button>
+            </div>
+        </div>
+        <div class="split-layout-gradient" style="background: url('https://raw.githubusercontent.com/heylynncontact-cpu/claque-doigts/main/assets/images/IMG1.jpg') no-repeat center center; background-size: cover; min-height: calc(100vh - 80px);"></div>
+    </div>
+    
+    <div class="popup-overlay" id="popup-free-version">
+        <div class="popup">
+            <button class="popup-close" onclick="document.getElementById('popup-free-version').classList.remove('active')">&times;</button>
+            <h2 class="popup-title">Ce contenu est verrouillé sans rendez-vous</h2>
+            <div class="popup-content">
+                <p>Une version gratuite est disponible mais incomplète. Prenez rendez-vous pour accéder à la version complète ou explorez la version gratuite.</p>
+            </div>
+            <div class="popup-actions">
+                <button class="btn btn-green" id="btn-take-appointment" onclick="window.open('https://calendly.com/linevd-pro/une-petite-discussion', '_blank')" style="padding: 4px 24px; border-radius: 5px;">Prendre un rendez-vous</button>
+                <button class="btn btn-white" id="btn-free-version" style="padding: 4px 24px; border-radius: 5px;">Version gratuite</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="popup-login">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h2 class="popup-title">Connexion</h2>
+            <div class="popup-content">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="password-input">Mot de passe</label>
+                        <div style="position: relative;">
+                            <input type="password" class="input-field" id="password-input" placeholder="........." required style="padding-right: 50px;">
+                            <button type="button" id="toggle-password" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer; font-size: 20px;">👁️</button>
+                        </div>
+                        <p class="form-error" id="login-error" style="display: none;"></p>
+                    </div>
+                    <button type="submit" class="btn btn-green btn-large">Valider</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer" style="padding: 12px 0; margin-top: 0; border-top: 1px solid #D8D8D8;">
+        <div class="footer-content" style="font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 16px;">
+            <span>© 2025 Claque Doigts - Tous droits réservés</span>
+            <span>|</span>
+            <a href="/pages/mentions-legales.html" style="color: #1A1A1A; text-decoration: none;">Mentions légales</a>
+        </div>
+    </footer>
+    
+    <script src="/js/firebase-config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script>
+        document.getElementById("toggle-password").addEventListener("click", function() {
+            const input = document.getElementById("password-input");
+            if (input.type === "password") {
+                input.type = "text";
+                this.textContent = "🙈";
+            } else {
+                input.type = "password";
+                this.textContent = "👁️";
+            }
+        });
+    </script>
+</body>
+</html>
