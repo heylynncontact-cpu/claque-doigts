@@ -1,0 +1,428 @@
+/* CLAQUE DOIGTS - UI KIT */
+
+/* Variables */
+:root {
+    --color-green: #CDF667;
+    --color-blue: #528EF5;
+    --color-purple: #C99CFD;
+    --color-pink: #FDAFB3;
+    --color-white: #FFFFFF;
+    --color-black: #1A1A1A;
+    --color-gray: #D8D8D8;
+    --color-gray-dark: #666666;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --border-radius: 16px;
+    --border-radius-sm: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fractul Variable', sans-serif;
+    background: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+/* Boutons */
+.btn {
+    font-family: 'Fractul Variable', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-big {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-large {
+    padding: 16px 48px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.btn-green {
+    background: var(--color-green);
+    color: var(--color-black);
+}
+
+.btn-purple {
+    background: var(--color-purple);
+    color: var(--color-black);
+}
+
+.btn-white {
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+}
+
+.btn-validate {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 100;
+    background: var(--color-green) !important;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.badge-green {
+    background: var(--color-green);
+    color: var(--color-black);
+}
+
+.badge-purple {
+    background: var(--color-purple);
+    color: var(--color-black);
+}
+
+.badge-pink {
+    background: var(--color-pink);
+    color: var(--color-black);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--color-gray);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Fractul Variable', sans-serif;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--color-green);
+}
+
+.input-field.error {
+    border-color: #FF4444;
+}
+
+.form-error {
+    color: #FF4444;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+textarea.input-field {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Label Input (choix unique) */
+.label-input {
+    padding: 16px 24px;
+    border: 2px solid var(--color-gray);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.label-input:hover {
+    border-color: var(--color-green);
+}
+
+.label-input.selected {
+    border-color: var(--color-green);
+    background: rgba(205, 246, 103, 0.1);
+}
+
+/* Choice Cards */
+.choice-card {
+    padding: 24px;
+    border: 2px solid var(--color-gray);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--color-white);
+}
+
+.choice-card:hover {
+    border-color: var(--color-green);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.choice-card.selected {
+    border-color: #CDF667 !important;
+    border-width: 3px !important;
+    background: rgba(205, 246, 103, 0.05);
+    position: relative;
+}
+
+.choice-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.choice-card-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--color-gray);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.choice-card.selected .choice-card-checkbox {
+    background: var(--color-green);
+    border-color: var(--color-green);
+    position: relative;
+}
+
+.choice-card.selected .choice-card-checkbox::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-black);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.choice-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.choice-card-description {
+    font-size: 14px;
+    color: var(--color-gray-dark);
+    margin: 0;
+}
+
+/* Slider */
+.slider-container {
+    padding: 20px 0;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 8px;
+    background: var(--color-gray);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-green);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-green);
+    cursor: pointer;
+    border: none;
+}
+
+.slider-value {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+/* Pop-ups */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.popup-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.popup-content {
+    margin-bottom: 24px;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    padding: 24px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-gray);
+    margin-top: 48px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-links {
+    margin-top: 12px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.bounce {
+    animation: bounce 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.shake {
+    animation: shake 0.3s ease;
+}
+
+/* Grilles */
+.cards-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.cards-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards-grid-2,
+    .cards-grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-validate {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        width: calc(100% - 32px);
+    }
+}
